@@ -38,15 +38,19 @@
         </div>
       </div>
     </section>
-    <div class="is-divider"></div>
+    <div class="has-text-centered">
+      <links />
+    </div>
+
+    <!-- Section: Image and content banners -->
     <section class="section">
       <div class="container">
         <div class="columns is-vcentered reverse-row-order">
           <div class="column is-half">
             <transition name="fade" mode="out-in">
               <img
-                :src="servicesImages[servicesActiveImage]"
                 :key="servicesImages[servicesActiveImage]"
+                :src="servicesImages[servicesActiveImage]"
                 data-toggle="tooltip"
                 width="800"
                 height="600"
@@ -66,22 +70,22 @@
 
                   <p
                     class="button card box is-white is-medium"
-                    @click="servicesActiveImage = 0"
                     :class="{ 'active-card': servicesActiveImage === 0 }"
+                    @click="servicesActiveImage = 0"
                   >
                     Web &amp; Email Hosting
                   </p>
                   <p
                     class="button card box is-white is-medium"
-                    @click="servicesActiveImage = 1"
                     :class="{ 'active-card': servicesActiveImage === 1 }"
+                    @click="servicesActiveImage = 1"
                   >
                     UNIX Shell Accounts
                   </p>
                   <p
                     class="button card box is-white is-medium"
-                    @click="servicesActiveImage = 2"
                     :class="{ 'active-card': servicesActiveImage === 2 }"
+                    @click="servicesActiveImage = 2"
                   >
                     Free Printing for Members
                   </p>
@@ -92,7 +96,6 @@
         </div>
       </div>
     </section>
-    <div class="is-divider"></div>
     <section class="section">
       <div class="container">
         <div class="columns is-vcentered">
@@ -117,7 +120,7 @@
                   make decisions, but also to learn more about *nix and free
                   software.
                 </p>
-                <h4 class="title is-4">
+                <h4 class="title is-4 mt-4">
                   We're totally open and super-inclusive!
                 </h4>
                 <p>
@@ -130,13 +133,160 @@
         </div>
       </div>
     </section>
+    <!--
     <div class="is-divider"></div>
-    <!--- The timeline -->
+-->
 
-    <section class="section has-text-centered">
+    <!-- Section: what you can do for us -->
+    <section class="section has-background-primary">
       <div class="container">
-        <h1 class="title">
-          History
+        <h2 class="title is-2 has-text-white has-shadow">
+          What You Can Do At the OCF
+        </h2>
+        <div class="columns is-vcentered">
+          <div class="column is-one-fifth">
+            <a class="box" href="https://linuxfoundation.org">
+              <div class="content mt-4">
+                <h3>Maintain our Servers</h3>
+                <p>
+                  We host lots of powerful servers and you can help work on them
+                  and learn Linux sysadmin skills in the process.
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="column is-one-fifth">
+            <a class="box" href="https://xfce.org">
+              <div class="content mt-4">
+                <h3>Work on our website</h3>
+                <p>I'm doing that now!!</p>
+              </div>
+            </a>
+          </div>
+          <div class="column is-one-fifth">
+            <a class="box" style="height:100%;" href="https://www.debian.org">
+              <div class="content mt-4">
+                <h3>Debian Linux</h3>
+                <p>
+                  You can make lots of laughable requests to buy stuff, but who
+                  knows, one of them might actually be a solid purchase! Link to
+                  purchase request form.
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="column is-one-fifth">
+            <a class="box" style="height:100%;" href="https://www.python.org">
+              <div class="content mt-4">
+                <h3>Tech Support</h3>
+                <p>
+                  We help people use our services. Drop by staff hours to get a
+                  feel for helping people!
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="column is-one-fifth">
+            <a class="box" style="height:100%;" href="https://www.apache.org">
+              <div class="content mt-4">
+                <h3>Events</h3>
+                <p>
+                  We host lots of events to help talk about open source and you
+                  can learn from them.
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--
+    <div class="is-divider"></div>
+-->
+
+    <!-- Section of cards: Open source softwares we use -->
+
+    <section class="section">
+      <div class="container">
+        <h2 class="title is-2">Technologies We Use</h2>
+        <div class="columns is-vcentered">
+          <div class="column is-one-fifth">
+            <a class="box" href="https://linuxfoundation.org">
+              <figure class="image is-square">
+                <img src="/assets/img/linux.png" />
+              </figure>
+              <div class="content mt-4">
+                <h3>Linux</h3>
+                <p>
+                  The world's most important open source project. Linux is the
+                  kernel that powers our servers, desktops, and more.
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="column is-one-fifth">
+            <a class="box" href="https://xfce.org">
+              <figure class="image is-square">
+                <g-image src="~/assets/svg/xfce.svg" />
+              </figure>
+              <div class="content mt-4">
+                <h3>XFCE desktop</h3>
+                <p>A good lightweight desktop we use on our machines</p>
+              </div>
+            </a>
+          </div>
+          <div class="column is-one-fifth">
+            <a class="box" style="height:100%;" href="https://www.debian.org">
+              <figure class="image is-square">
+                <g-image src="~/assets/oss_icons/debian.png" />
+              </figure>
+              <div class="content mt-4">
+                <h3>Debian Linux</h3>
+                <p>
+                  An open-source, Linux-based operating system that powers our
+                  desktops and servers!
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="column is-one-fifth">
+            <a class="box" style="height:100%;" href="https://www.python.org">
+              <figure class="image is-square">
+                <g-image src="~/assets/svg/python.svg" />
+              </figure>
+              <div class="content mt-4">
+                <h3>Python</h3>
+                <p>
+                  Python is an open-source programming language
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="column is-one-fifth">
+            <a class="box" style="height:100%;" href="https://www.apache.org">
+              <figure class="image is-square">
+                <g-image src="~/assets/svg/apache.svg" />
+              </figure>
+              <div class="content mt-4">
+                <h3>Apache</h3>
+                <p>
+                  Apache is a creater of open-source software. Idk anything else
+                  about them but they seem chill I guess. I'll have to check
+                  their website for more info
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--- Section: The timeline -->
+    <div class="is-divider"></div>
+    <section class="section">
+      <div class="container">
+        <h1 class="title is-2">
+          History of the OCF
         </h1>
         <history />
       </div>
@@ -146,12 +296,14 @@
 
 <script>
 import History from "~/components/History.vue";
+import Links from "~/components/Links.vue";
 export default {
   metaInfo: {
     title: "About Us"
   },
   components: {
-    History
+    History,
+    Links
   },
   data() {
     return {
@@ -175,5 +327,12 @@ p.card {
 }
 .reverse-row-order {
   flex-direction: row-reverse;
+}
+#actions-bg {
+  background-image: url("/assets/img/actions/event.jpg"),
+    url("/assets/img/actions/webdev.jpg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: left top, right bottom;
+  background-size: 50%, 50%;
 }
 </style>
