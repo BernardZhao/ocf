@@ -4,7 +4,7 @@
       <div class="navbar-brand">
         <g-link class="navbar-item" to="/">
           <penguin class="penguin" />
-          <logo height="30px" class="is-hidden-mobile" />
+          <logo height="30px" class="is-hidden-mobile" :dark-mode="darkMode" />
         </g-link>
         <slot name="navItem" />
         <span
@@ -55,6 +55,12 @@
             <b-button v-else outlined type="is-link" @click="$keycloak.login()">
               Login
             </b-button>
+          </div>
+          <div
+            class="navbar-item is-clickable is-unselectable"
+            @click="toggleTheme"
+          >
+            {{ darkMode ? "🌑" : "☀️" }}
           </div>
         </div>
       </div>
@@ -129,12 +135,39 @@ export default {
         { name: "MySQL Database", route: "/docs/services/mysql" },
         { name: "Software Mirrors", route: "/docs/services/mirrors" },
         { name: "High Performance Computing", route: "/docs/services/hpc" }
-      ]
+      ],
+      darkMode: false
     };
   },
   computed: {
     user() {
       return store.user;
+    }
+  },
+  watch: {
+    darkMode(newMode) {
+      const appClasses = document.getElementById("app").classList;
+
+      if (appClasses.value.includes("dark") !== newMode) {
+        appClasses.toggle("dark");
+      }
+      localStorage.darkMode = newMode;
+    }
+  },
+  mounted() {
+    if (localStorage.darkMode) {
+      const status = localStorage.darkMode === "true";
+      const appClasses = document.getElementById("app").classList;
+
+      if (appClasses.value.includes("dark") !== status) {
+        appClasses.toggle("dark");
+      }
+      this.darkMode = status;
+    }
+  },
+  methods: {
+    toggleTheme() {
+      this.darkMode = !this.darkMode;
     }
   }
 };
